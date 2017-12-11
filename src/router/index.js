@@ -11,7 +11,7 @@ Vue.use(Router)
 const router = new Router({
   routes: [
     {
-      path: '/',
+      path: '/home',
       name: 'Home',
       meta: {requireAuth: true},
       component: Home

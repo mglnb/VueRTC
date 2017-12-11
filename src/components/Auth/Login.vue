@@ -10,6 +10,7 @@
 </div>
 </template>
 <script>
+import {loginWithEmailAndPassword} from '@/auth'
 export default {
     name: 'login',
     data() {
@@ -37,15 +38,7 @@ export default {
     },
     methods: {
         login() {
-            this.$nextTick(function() {
-                this.$auth.signInWithEmailAndPassword(this.email, this.password)
-                    .then(() => {
-                        this.$router.push('/')
-                    })
-                    .catch((e) => {
-                        console.warn(e.code, e.message)
-                    })
-            })
+           loginWithEmailAndPassword(this, this.email, this.password)
         }
     }
 }

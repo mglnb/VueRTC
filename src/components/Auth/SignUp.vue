@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import {signUpWithEmaiLAndPassword} from '@/auth'
 export default {
     name: 'signUp',
     data() {
@@ -19,11 +20,7 @@ export default {
     },
     methods: {
         signUp() {
-            this.$auth.createUserWithEmailAndPassword(this.email, this.password)
-                .then(res => {
-                    console.log(res)
-                })
-                .catch(err => console.log(err))
+            signUpWithEmaiLAndPassword(this, this.email, this.password)
         }
     }
 }
